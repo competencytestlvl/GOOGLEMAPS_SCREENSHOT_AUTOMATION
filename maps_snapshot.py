@@ -6,9 +6,9 @@ import os
 import time
 
 
-# CONSTANTS - your environment variables for chromedriver.exe
+# CONSTANTS - set your environment variable for chromedriver.exe
 CHROMEDRIVER_PATH = os.environ.get("CHROMEDRIVER_EXECUTABLE")
-# List of states/places in Malaysia
+# Example list of states/places in Malaysia
 CONTENTS = ['Johor', 
             'Kedah', 
             'Kelantan', 
@@ -25,7 +25,7 @@ CONTENTS = ['Johor',
             'Terengganu']
 
 
-# #------------------WEBDRIVER CONFIGURATION----------------
+# ------------------WEBDRIVER CONFIGURATION----------------
 def configure_chrome_driver():
     chrome_option = webdriver.ChromeOptions()
     chrome_option.add_argument("--incognito")
@@ -39,7 +39,7 @@ def configure_chrome_driver():
 driver = configure_chrome_driver()
 
 
-# #-------------------SAVE SCREENSHOT----------------
+# -------------------SAVE SCREENSHOT----------------
 def save_screenshot(file_path):
     '''Saves the screenshots in a specific directory'''
     driver.save_screenshot(file_path)
@@ -49,7 +49,7 @@ def save_screenshot(file_path):
 
 #-----------------SEARCH STATES----------------
 def search(list_items, directory):
-    '''Loops thorugh input list to search for places in Google Maps'''
+    '''Loops through input list to search for places in Google Maps'''
 
     # Google Maps URL
     url = "https://www.google.com.my/maps"
